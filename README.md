@@ -15,12 +15,12 @@ npm install --save emo-rating-react
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'emo-rating-react'
+import EmoRating from 'emo-rating-react'
 import 'emo-rating-react/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <EmoRating />
   }
 }
 ```
