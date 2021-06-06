@@ -3,11 +3,11 @@
 /* rating */
 .face {
   margin: 0 12px;
-  /* position: relative; */
   width: 67px;
   height: 67px;
   border-radius: 50%;
   z-index: 2;
+  text-align: center;
 }
 
 .rating-btn input {
@@ -38,17 +38,13 @@
   color: #959e9f;
   font-weight: 400;
   transition: all 0.3s ease;
-  /* position: absolute;
-  left: 8px;
-  bottom: -27px; */
 }
 .rating-btn input:focus {
   outline: none;
 }
-.rating-btn.selected input +.rating-text {
+.rating-btn.selected input + .rating-text {
   color: #4d4d4d;
   margin-top: 15px;
-  /* transition: all 1s ease; */
 }
 .bg-line {
   position: absolute;
