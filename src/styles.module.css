@@ -29,7 +29,6 @@
 .rating-wrapper {
   display: flex;
   padding: 57px 0 84px;
-  width: 320px;
   position: relative;
 }
 .rating-text {

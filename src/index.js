@@ -8,9 +8,7 @@ export const EmoRating = ({
   size,
   customClassName
 }) => {
-  const [selectedRating, setSelectedRating] = useState(
-    defaultSelected ? defaultSelected : null
-  )
+  const [selectedRating, setSelectedRating] = useState(defaultSelected || null)
 
   // when user clicks on rating
   const handleRatingClick = (rating, e) => {
@@ -21,13 +19,17 @@ export const EmoRating = ({
   }
 
   return (
-    <div className={`${styles['rating-wrapper']} ${customClassName}`}>
-      {ratingData && ratingData.length > 0 ? (
+    <div className={`${styles['rating-wrapper']} ${customClassName || ""}`}>
+      {ratingData && Array.isArray(ratingData) && ratingData.length > 0 ? (
         ratingData.map((rating) => (
-          <div className={styles['face']} key={rating.id}>
+          <div className={styles['face']} key={rating.id} 
+            style={{
+              width: size ? `${size}px` : `67px`,
+              height: size ? `${size}px` : `67px`
+            }}>
             <div
               className={`${styles['rating-btn']} ${
-                selectedRating && selectedRating === rating.id
+                selectedRating && selectedRating == rating.id
                   ? styles['selected']
                   : ''
               }`}
@@ -36,7 +38,7 @@ export const EmoRating = ({
                 type='button'
                 style={{
                   backgroundImage: `url(${
-                    selectedRating && selectedRating === rating.id
+                    selectedRating && selectedRating == rating.id
                       ? rating.icon_selected
                       : rating.icon
                   })`,
@@ -50,7 +52,7 @@ export const EmoRating = ({
           </div>
         ))
       ) : (
-        <div>No data available</div>
+        <div>Please check the provided data</div>
       )}
     </div>
   )
