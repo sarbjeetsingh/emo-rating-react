@@ -2,43 +2,50 @@ import React from 'react'
 
 import { EmoRating } from 'emo-rating-react'
 import 'emo-rating-react/dist/index.css'
+
 const ratingData = [
   {
     id: 1,
     text: 'Terrible',
-    icon: 'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/terrible-icon.svg',
+    icon: 'https://i.ibb.co/BPKK8Hm/terrible-icon.png',
     icon_selected:
-      'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/terrible-big-icon.svg'
+      'https://i.ibb.co/r6qN2YV/terrible-big-icon.png'
   },
   {
     id: 2,
     text: 'Bad',
-    icon: 'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/bad-icon.svg',
+    icon: 'https://i.ibb.co/9hLWPYh/bad-icon.png',
     icon_selected:
-      'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/sad-big-icon.svg'
+      'https://i.ibb.co/71rzMSt/sad-big-icon.png'
   },
   {
     id: 3,
     text: 'Okay',
-    icon: 'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/okay-icon.svg',
+    icon: 'https://i.ibb.co/QcGswBH/okay-icon.png',
     icon_selected:
-      'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/okay-big-icon.svg'
+      'https://i.ibb.co/HTvbnRP/okay-big-icon.png'
   },
   {
     id: 4,
     text: 'Good',
-    icon: 'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/good-icon.svg',
+    icon: 'https://i.ibb.co/Z8xYwcs/good-icon.png',
     icon_selected:
-      'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/happy-big-icon.svg'
+      'https://i.ibb.co/6tf34hJ/happy-big-icon.png'
   },
   {
     id: 5,
     text: 'Great',
-    icon: 'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/great-icon.svg',
+    icon: 'https://i.ibb.co/4WzvFsm/great-icon.png',
     icon_selected:
-      'https://s3-ap-southeast-1.amazonaws.com/kulcare-assets/images/great-big-icon.svg'
+      'https://i.ibb.co/rsh9BNt/great-big-icon.png'
   }
 ]
+
+const defaultSelected = 1;
+
+const size = 67;
+
+
 const App = () => {
   const handleOnChange = (selectedRating, e) => {
     console.log(selectedRating)
@@ -47,7 +54,8 @@ const App = () => {
     <EmoRating
       ratingData={ratingData}
       onChange={handleOnChange}
-      defaultSelected={1}
+      defaultSelected={defaultSelected || 1}
+      size = {size}
     />
   )
 }
