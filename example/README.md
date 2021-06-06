@@ -83,4 +83,4 @@ ratingData | ratingData must be an array of objects with id, text, icon, icon_se
 onChange | onChange function handles changing the emoji selection, this function returns the emoji selected, see console | -- | function | No
 defaultSelected | this shows a rating/ emoji selected by default | 1 | Yes 
 customClassName | define a custom class for this plugin | -- | String | Yes
-size | define size for the emoji image | "67" | Integer | Yes
+size | define size for the emoji image | 67 | Integer | Yes
